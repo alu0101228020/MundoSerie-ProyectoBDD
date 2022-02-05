@@ -1,6 +1,6 @@
 # PROYECTO FINAL DE LA ASIGNATURA ADMINISTRACIÓN Y DISEÑO DE BASE DE DATOS
 
-En este proyecto se ha desarrollado una base de datos sobre una plataforma de valoraciones de series y se ha decidido llevar a cabo su implementación mediante **PostgreSQL** como Servicio Gestor de la Base de Datos. Mundo Serie permite a los usuarios adquirir información y compartir sus impresiones acerca de las series que se encuentran en las distintas plataformas de streaming, así como realizar valoraciones y recomendaciones de dichas series. Por lo tanto, crearemos una base de datos donde se almacenará la información relativa a series, actores, directores, guionistas, los usuarios de la aplicación y sus opiniones.
+En este proyecto se ha desarrollado una base de datos sobre una plataforma de información y valoración de series llamada **Mundo Serie**, y se ha decidido llevar a cabo su implementación mediante **PostgreSQL** como Servicio Gestor de la Base de Datos. **Mundo Serie** permite a los usuarios adquirir información y compartir sus impresiones acerca de las series que se encuentran en las distintas plataformas de streaming, así como realizar valoraciones y recomendaciones de dichas series. Por lo tanto, crearemos una base de datos donde se almacenará la información relativa a series, actores, directores, guionistas, los usuarios de la aplicación y sus opiniones.
 
 ## Componentes del equipo
 
@@ -23,11 +23,11 @@ En este proyecto se ha desarrollado una base de datos sobre una plataforma de va
 ## Instrucciones de uso
 Se dispone de 3 scripts diferentes en nuestro proyecto, los cuales son:
 
-* **mundoSerie.sql:** mediante la ejecución de este scripts, se realiza la creación de las tablas con todos sus atributos. A su vez, se lleva a cabo una serie de **checks**
+* **mundoSerie.sql:** mediante la ejecución de este scripts, se realiza la creación de las tablas con todos sus atributos. A su vez, se lleva a cabo una serie de **checks**.
 * **triggers.sql:** en este fichero se definen todos los disparadores de los que se dispondrán en la base de datos. Al ejecutar este script, dichos disparadores se crean automáticamente.
 * **insert.sql:** este fichero contiene una serie inserciones a las distintas tablas de la base de datos. Al ejecutar este script, dichas inserciones se realizan automáticamente.
 
-A la hora de emplear estos scripts, debemos de seguir un orden, el cual es:
+A la hora de ejecutar estos scripts, debemos de seguir un orden, el cual es:
 
 1. **mundoSerie.sql**
 2. **triggers.sql**
@@ -47,7 +47,6 @@ CREATE TABLE IF NOT EXISTS SERIE (
   fecha_estreno DATE NULL,
   idioma VARCHAR(15) NOT NULL,
   sinopsis VARCHAR(400) NULL,
-  valoracion INT NULL,
   PRIMARY KEY (titulo));
 ```
 
