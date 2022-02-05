@@ -19,6 +19,7 @@ En este proyecto se ha desarrollado una base de datos sobre una plataforma de in
   * [Generación de Código (Scripts)](https://github.com/alu0101228020/MundoSerie-ProyectoBDD/tree/main/Generacion-Codigo)
   * [Carga de datos](https://github.com/alu0101228020/MundoSerie-ProyectoBDD/tree/main/Carga-datos)
   * [Proceso de carga de datos y pruebas realizadas]()
+  * [Distribución del trabajo y reuniones de seguimiento](https://github.com/alu0101228020/MundoSerie-ProyectoBDD/blob/main/Distribucion-del-trabajo.pdf)
 
 ## Instrucciones de uso
 Se dispone de 3 scripts diferentes en nuestro proyecto, los cuales son:
