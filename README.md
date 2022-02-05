@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS SERIE (
   fecha_estreno DATE NULL,
   idioma VARCHAR(15) NOT NULL,
   sinopsis VARCHAR(400) NULL,
+  valoracion INT NULL,
   PRIMARY KEY (titulo));
 ```
 
@@ -106,7 +107,7 @@ CREATE TABLE IF NOT EXISTS PERSONA (
   PRIMARY KEY (nombre_artistico));
 ```
 
-Luego, se realiza la tabla SERIE_PERTENECE_GENERO que representa la relación entre serie y género.
+Luego, se realiza la tabla SERIE_PERTENECE_GENERO que representa la relación entre serie y género dado que una serie pertenece a uno o hasta 5 géneros.
 
 ```sql
 -- -----------------------------------------------------
@@ -129,7 +130,7 @@ CREATE TABLE IF NOT EXISTS SERIE_PERTENECE_GENERO (
     ON UPDATE CASCADE);
 ```
 
-Luego, creamos la tabla PERSONA_PARTICIPA_CAPITULO que representa la relación entre persona y capítulo.
+Luego, creamos la tabla PERSONA_PARTICIPA_CAPITULO que representa la relación entre persona y capítulo ya que una persona que realiza un rol participa en un capítulo.
 
 ```sql
 -- -----------------------------------------------------
@@ -191,7 +192,7 @@ CREATE TABLE IF NOT EXISTS CLIENTE (
     ON UPDATE CASCADE);
 ```
 
-Finalmente, se crea la tabla CLIENTE_COMENTA_SERIE que tiene como clave primaria el email del cliente y el título de la serie.
+Finalmente, se crea la tabla CLIENTE_COMENTA_SERIE que tiene como clave primaria el email del cliente y el título de la serie ya que el cliente comenta una serie.
 
 ```sql
 -- -----------------------------------------------------
@@ -296,4 +297,3 @@ FOR EACH ROW EXECUTE PROCEDURE calcular_media();
 ```
 
 Este disparador permite calcular la media de valoraciones por capítulo. Para ello, se realiza la media de todas las puntuaciones que existen por cada capítulo.
-
