@@ -18,7 +18,7 @@ En este proyecto se ha desarrollado una base de datos sobre una plataforma de va
   * [Modelo Lógico Objeto-Relacional (UML)]()
   * [Generación de Código (Scripts)]()
   * [Carga de datos]()
-  * [Proceso de carga de datos pruebas realizadas]
+  * [Proceso de carga de datos pruebas realizadas]()
 
 ## Descripción de la GENERACIÓN DE CÓDIGO DE COMPONENTES Y PROCEDIMIENTOS
 
