@@ -1,6 +1,6 @@
 # PROYECTO FINAL DE LA ASIGNATURA ADMINISTRACIÓN Y DISEÑO DE BASE DE DATOS
 
-- En este proyecto se ha desarrollado una base de datos sobre una plataforma de valoraciones de series y se ha decidido llevar a cabo su implementación mediante PostgreSQL como Servicio Gestor de la Base de Datos.
+En este proyecto se ha desarrollado una base de datos sobre una plataforma de valoraciones de series y se ha decidido llevar a cabo su implementación mediante PostgreSQL como Servicio Gestor de la Base de Datos. Mundo Serie permite a los usuarios adquirir información y compartir sus impresiones acerca de las series que se encuentran en las distintas plataformas de streaming, así como realizar valoraciones y recomendaciones de dichas series. Por lo tanto, crearemos una base de datos donde se almacenará la información relativa a series, actores, directores, guionistas, los usuarios de la aplicación y sus opiniones.
 
 ## Componentes del equipo:
 
@@ -10,7 +10,7 @@
  *  **Jorge Hernández Batista - [ alu0101214627@ull.edu.es ](alu0101214627@ull.edu.es)**
  *  **Acoidán Mesa Hernández - [ alu0101206479@ull.edu.es ](alu0101206479@ull.edu.es)**
 
-# Índice de documentos
+## Índice de documentos
 
   * [Requisitos]()
   * [Modelo Conceptual (ER/E)]()
