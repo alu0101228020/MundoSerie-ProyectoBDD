@@ -2,7 +2,7 @@
 
 En este proyecto se ha desarrollado una base de datos sobre una plataforma de valoraciones de series y se ha decidido llevar a cabo su implementación mediante **PostgreSQL** como Servicio Gestor de la Base de Datos. Mundo Serie permite a los usuarios adquirir información y compartir sus impresiones acerca de las series que se encuentran en las distintas plataformas de streaming, así como realizar valoraciones y recomendaciones de dichas series. Por lo tanto, crearemos una base de datos donde se almacenará la información relativa a series, actores, directores, guionistas, los usuarios de la aplicación y sus opiniones.
 
-## Componentes del equipo:
+## Componentes del equipo
 
  *  **Daniel Álvarez Medina - [ alu0101216126@ull.edu.es ](alu0101216126@ull.edu.es)**
  *  **Alberto Mendoza Rodríguez - [ alu0101217741@ull.edu.es ](alu0101217741@ull.edu.es)**
