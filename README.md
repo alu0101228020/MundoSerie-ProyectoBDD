@@ -293,6 +293,9 @@ $verificar_email$ LANGUAGE plpgsql;
 /* Create trigger with function verificar_email() */
 CREATE TRIGGER trigger_verificar_email_before_insert BEFORE INSERT ON USUARIO
 FOR EACH ROW EXECUTE PROCEDURE verificar_email();
+
+CREATE TRIGGER trigger_verificar_email_before_update BEFORE UPDATE ON USUARIO
+FOR EACH ROW EXECUTE PROCEDURE verificar_email();
 ```
 
 Este disparador permite verificar el email del usuario para que tenga una estructura de correo válida.
@@ -314,6 +317,9 @@ $comprobar_numero_generos$ LANGUAGE plpgsql;
 /* Create trigger with function comprobar_numero_generos() */
 CREATE TRIGGER trigger_comprobar_numero_generos_before_insert BEFORE INSERT ON SERIE_PERTENECE_GENERO
 FOR EACH ROW EXECUTE PROCEDURE comprobar_numero_generos();
+
+CREATE TRIGGER trigger_comprobar_numero_generos_before_update BEFORE UPDATE ON SERIE_PERTENECE_GENERO
+FOR EACH ROW EXECUTE PROCEDURE comprobar_numero_generos();
 ```
 
 Este disparador permite comprobar el número de géneros que se tiene por serie. Dado que cada serie solo podrá tener como máximo 5 géneros.
@@ -334,6 +340,9 @@ $comprobar_valoracion_capitulo$ LANGUAGE plpgsql;
 /* Create trigger with function comprobar_valoracion_capitulo() */
 CREATE TRIGGER trigger_comprobar_valoracion_capitulo_before_insert BEFORE INSERT ON CLIENTE_COMENTA_SERIE
 FOR EACH ROW EXECUTE PROCEDURE comprobar_valoracion_capitulo();
+
+CREATE TRIGGER trigger_comprobar_valoracion_capitulo_before_update BEFORE UPDATE ON CLIENTE_COMENTA_SERIE
+FOR EACH ROW EXECUTE PROCEDURE comprobar_valoracion_capitulo();
 ```
 
 Este disparador permite comprobar si el cliente puede o no comentar la serie, dado que para poder comentarla antes tendría que haber valorado algún capítulo.
@@ -352,6 +361,9 @@ $calcular_media$ LANGUAGE plpgsql;
 
 /* Create trigger with function calcular_media() */
 CREATE TRIGGER trigger_calcular_valoracion_after_insert AFTER INSERT ON CLIENTE_VALORA_CAPITULO
+FOR EACH ROW EXECUTE PROCEDURE calcular_media();
+
+CREATE TRIGGER trigger_calcular_valoracion_after_update AFTER UPDATE ON CLIENTE_VALORA_CAPITULO
 FOR EACH ROW EXECUTE PROCEDURE calcular_media();
 ```
 
