@@ -232,7 +232,7 @@ Seguidamente, se crea la tabla CLIENTE_COMENTA_SERIE que tiene como clave primar
 -- -----------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS CLIENTE_COMENTA_SERIE (
-  fecha TIMESTAMP NOT NULL,
+  fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   titulo_serie VARCHAR(45) NOT NULL,
   email_cliente VARCHAR(100) NOT NULL,
   comentario VARCHAR(400) NOT NULL,
@@ -257,7 +257,7 @@ Finalmente, se crea la tabla CLIENTE_VALORA_CAPITULO que tiene como clave primar
 -- -----------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS CLIENTE_VALORA_CAPITULO (
-  fecha TIMESTAMP NOT NULL,
+  fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   email_cliente VARCHAR(100) NOT NULL,
   titulo_serie VARCHAR(45) NOT NULL,
   numero_temporada INT NOT NULL,
