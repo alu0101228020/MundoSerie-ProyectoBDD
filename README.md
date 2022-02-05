@@ -14,7 +14,7 @@ En este proyecto se ha desarrollado una base de datos sobre una plataforma de in
 
   * [Requisitos](https://github.com/alu0101228020/MundoSerie-ProyectoBDD/blob/main/Requisitos.pdf)
   * [Modelo Conceptual (ER/E)](https://github.com/alu0101228020/MundoSerie-ProyectoBDD/tree/main/Modelo-Conceptual)
-  * [Modelo Lógico Relacional]()
+  * [Modelo Lógico Relacional](https://github.com/alu0101228020/MundoSerie-ProyectoBDD/tree/main/Modelo-Logico-Relacional)
   * [Modelo Lógico Objeto-Relacional (UML)](https://github.com/alu0101228020/MundoSerie-ProyectoBDD/tree/main/Modelo-Logico-Objeto-Relacional)
   * [Generación de Código (Scripts)](https://github.com/alu0101228020/MundoSerie-ProyectoBDD/tree/main/Generacion-Codigo)
   * [Carga de datos](https://github.com/alu0101228020/MundoSerie-ProyectoBDD/tree/main/Carga-datos)
