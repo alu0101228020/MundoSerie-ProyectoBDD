@@ -3,6 +3,8 @@
 
 ## Descripción de la GENERACIÓN DE CÓDIGO DE COMPONENTES Y PROCEDIMIENTOS
 
+En primer lugar, se lleva a cabo la creación de la tabla SERIE que contiene como clave primaria el titulo.
+
 ```sql
 -- -----------------------------------------------------
 -- Table SERIE
@@ -17,7 +19,7 @@ CREATE TABLE IF NOT EXISTS SERIE (
   PRIMARY KEY (titulo));
 ```
 
-En primer lugar, se lleva a cabo la creación de la tabla SERIE que contiene como clave primaria el titulo.
+Luego, se lleva a cabo la creación de la tabla GENERO que contiene como clave primaria el nombre.
 
 ```sql
 -- -----------------------------------------------------
@@ -30,7 +32,7 @@ CREATE TABLE IF NOT EXISTS GENERO (
   PRIMARY KEY (nombre));
 ```
 
-Luego, se lleva a cabo la creación de la tabla GENERO que contiene como clave primaria el nombre.
+Se realiza la creación de la tabla TEMPORADA que contiene como clave primaria el número de temporada y el título de la serie.
 
 ```sql
 -- -----------------------------------------------------
@@ -50,7 +52,7 @@ CREATE TABLE IF NOT EXISTS TEMPORADA (
     ON UPDATE CASCADE);
 ```
 
-Se realiza la creación de la tabla TEMPORADA que contiene como clave primaria el número de temporada y el título de la serie.
+Luego, se lleva a cabo la creación de la tabla CAPITULO que contiene como clave primaria el número del capítulo, el título de la serie y el número de temporada. Además, en esta tabla se tiene en cuenta que poder defecto el campo valoracion se iniciará a 0 dado que a través de un disparador, se actualizará para realizar la media de valoraciones que existen en un mismo capítulo.
 
 ```sql
 -- -----------------------------------------------------
@@ -73,7 +75,7 @@ CREATE TABLE IF NOT EXISTS CAPITULO (
     ON UPDATE CASCADE);
 ```
 
-Luego, se lleva a cabo la creación de la tabla CAPITULO que contiene como clave primaria el número del capítulo, el título de la serie y el número de temporada. Además, en esta tabla se tiene en cuenta que poder defecto el campo valoracion se iniciará a 0 dado que a través de un disparador, se actualizará para realizar la media de valoraciones que existen en un mismo capítulo.
+Seguidamente, se lleva a cabo la creación de la tabla USUARIO que contiene como clave primaria el email.
 
 ```sql
 -- -----------------------------------------------------
@@ -88,7 +90,7 @@ CREATE TABLE IF NOT EXISTS USUARIO (
   PRIMARY KEY (email));
 ```
 
-Seguidamente, se lleva a cabo la creación de la tabla USUARIO que contiene como clave primaria el email.
+A continuación, se lleva a cabo la creación de la tabla PERSONA que contiene como clave primaria el nombre artístico.
 
 ```sql
 -- -----------------------------------------------------
@@ -105,7 +107,7 @@ CREATE TABLE IF NOT EXISTS PERSONA (
   PRIMARY KEY (nombre_artistico));
 ```
 
-A continuación, se lleva a cabo la creación de la tabla PERSONA que contiene como clave primaria el nombre artístico.
+Luego, se realiza la tabla SERIE_PERTENECE_GENERO que representa la relación entre serie y género.
 
 ```sql
 -- -----------------------------------------------------
@@ -128,7 +130,7 @@ CREATE TABLE IF NOT EXISTS SERIE_PERTENECE_GENERO (
     ON UPDATE CASCADE);
 ```
 
-Luego, se realiza la tabla SERIE_PERTENECE_GENERO que representa la relación entre serie y género.
+Luego, creamos la tabla PERSONA_PARTICIPA_CAPITULO que representa la relación entre persona y capítulo.
 
 ```sql
 -- -----------------------------------------------------
@@ -154,7 +156,7 @@ CREATE TABLE IF NOT EXISTS PERSONA_PARTICIPA_CAPITULO (
     ON UPDATE CASCADE);
 ```
 
-Luego, creamos la tabla PERSONA_PARTICIPA_CAPITULO que representa la relación entre persona y capítulo.
+A continuación, creamos la tabla ADMINISTRADOR donde se representa un CHECK que establece que el sueldo mínimo de un administrador debe ser mayor que 1050.00. Además, contiene como clave primaria el email que está relacionado con la tabla USUARIO.
 
 ```sql
 -- -----------------------------------------------------
@@ -172,7 +174,7 @@ CREATE TABLE IF NOT EXISTS ADMINISTRADOR (
     ON UPDATE CASCADE);
 ```
 
-A continuación, creamos la tabla ADMINISTRADOR donde se representa un CHECK que establece que el sueldo mínimo de un administrador debe ser mayor que 1050.00. Además, contiene como clave primaria el email que está relacionado con la tabla USUARIO.
+Además, creamos la tabla CLIENTE donde se representa un CHECK que establece que la suscripción del cliente debe ser 'Mensual' o 'Anual'. Además, contiene como clave primaria el email que está relacionado con la tabla USUARIO.
 
 ```sql
 -- -----------------------------------------------------
@@ -190,7 +192,7 @@ CREATE TABLE IF NOT EXISTS CLIENTE (
     ON UPDATE CASCADE);
 ```
 
-A continuación, creamos la tabla CLIENTE donde se representa un CHECK que establece que la suscripción del cliente debe ser 'Mensual' o 'Anual'. Además, contiene como clave primaria el email que está relacionado con la tabla USUARIO.
+Finalmente, se crea la tabla CLIENTE_COMENTA_SERIE que tiene como clave primaria el email del cliente y el título de la serie.
 
 ```sql
 -- -----------------------------------------------------
@@ -214,8 +216,6 @@ CREATE TABLE IF NOT EXISTS CLIENTE_COMENTA_SERIE (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
 ```
-
-Finalmente, se crea la tabla CLIENTE_COMENTA_SERIE que tiene como clave primaria el email del cliente y el título de la serie.
 
 En el caso de los disparadores, creamos los siguientes:
 
