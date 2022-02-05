@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS PERSONA_PARTICIPA_CAPITULO (
     ON UPDATE CASCADE);
 ```
 
-A continuación, creamos la tabla ADMINISTRADOR donde se representa un CHECK que establece que el sueldo mínimo de un administrador debe ser mayor que 1050.00. Además, contiene como clave primaria el email que está relacionado con la tabla USUARIO.
+A continuación, creamos la tabla ADMINISTRADOR donde se representa un **CHECK** que establece que el sueldo mínimo de un administrador debe ser mayor que 1050.00. Además, contiene como clave primaria el email que está relacionado con la tabla USUARIO.
 
 ```sql
 -- -----------------------------------------------------
@@ -192,7 +192,7 @@ CREATE TABLE IF NOT EXISTS ADMINISTRADOR (
     ON UPDATE CASCADE);
 ```
 
-Además, creamos la tabla CLIENTE donde se representa un CHECK que establece que la suscripción del cliente debe ser 'Mensual' o 'Anual'. También, contiene como clave primaria el email que está relacionado con la tabla USUARIO.
+Además, creamos la tabla CLIENTE donde se representa un **CHECK** que establece que la suscripción del cliente debe ser 'Mensual' o 'Anual'. También, contiene como clave primaria el email que está relacionado con la tabla USUARIO.
 
 ```sql
 -- -----------------------------------------------------
@@ -210,7 +210,7 @@ CREATE TABLE IF NOT EXISTS CLIENTE (
     ON UPDATE CASCADE);
 ```
 
-Finalmente, se crea la tabla CLIENTE_COMENTA_SERIE que tiene como clave primaria el email del cliente y el título de la serie ya que un cliente puede comentar una serie.
+Seguidamente, se crea la tabla CLIENTE_COMENTA_SERIE que tiene como clave primaria el email del cliente y el título de la serie ya que un cliente puede comentar una serie.
 
 ```sql
 -- -----------------------------------------------------
@@ -231,6 +231,33 @@ CREATE TABLE IF NOT EXISTS CLIENTE_COMENTA_SERIE (
   CONSTRAINT fk_CLIENTE_COMENTA_SERIE_SERIE1
     FOREIGN KEY (titulo_serie)
     REFERENCES SERIE (titulo)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+```
+
+Finalmente, se crea la tabla CLIENTE_VALORA_CAPITULO que tiene como clave primaria el email del cliente, el título de la serie, el número de temporada y el número del capítulo. Además, contiene un **CHECK** que permite limitar la puntuación entre 1 y 10 realiza un cliente sobre un capítulo.
+
+```sql
+-- -----------------------------------------------------
+-- Table CLIENTE_VALORA_CAPITULO
+-- -----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS CLIENTE_VALORA_CAPITULO (
+  fecha TIMESTAMP NOT NULL,
+  email_cliente VARCHAR(100) NOT NULL,
+  titulo_serie VARCHAR(45) NOT NULL,
+  numero_temporada INT NOT NULL,
+  numero_capitulo INT NOT NULL,
+  puntuacion FLOAT CHECK (puntuacion >= 1 AND puntuacion <= 10) NOT NULL,
+  PRIMARY KEY (email_cliente, titulo_serie, numero_temporada, numero_capitulo),
+  CONSTRAINT fk_CLIENTE_VALORA_CAPITULO_CLIENTE1
+    FOREIGN KEY (email_cliente)
+    REFERENCES CLIENTE (email_cliente)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT fk_CLIENTE_VALORA_CAPITULO_CAPITULO1
+    FOREIGN KEY (numero_capitulo , titulo_serie , numero_temporada)
+    REFERENCES CAPITULO (numero_capitulo , titulo_serie , numero_temporada)
     ON DELETE CASCADE
     ON UPDATE CASCADE);
 ```
