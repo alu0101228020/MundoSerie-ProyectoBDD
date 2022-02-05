@@ -84,8 +84,30 @@ Se ha llevado a cabo 1 inserción en la tabla CLIENTE_COMENTA_SERIE y no se ha p
 
 ![TRIGGER trigger_calcular_valoracion_after_insert](Comprobacion-triggers/trigger_calcular_valoracion_after_insert.png)
 
-Inicialmente, se muestra a través de los SELECT como por defecto en la serie Dark, temporada 1 y capítulo 1 no existe ninguna valoración y por lo tanto, por defecto la valoración del capítulo, que corresponde a la media de las valoraciones, es 0.
+Inicialmente, en la tabla CLIENTE_VALORA_CAPITULO se muestra a través de los SELECT como por defecto en la serie Dark, temporada 1 y capítulo 1 no existe ninguna valoración y por lo tanto, por defecto la valoración del capítulo, que corresponde a la media de las valoraciones, es 0 en la tabla CAPITULO.
 
 ![TRIGGER trigger_calcular_valoracion_after_insert](Comprobacion-triggers/trigger_calcular_valoracion_after_insert_2.png)
 
 Luego, se realizan 2 inserciones de 2 clientes que permiten valorar el capítulo y por lo tanto, calcular la media de la valoración del capítulo.
+
+## Funcionamiento check
+
+### Check administrador_sueldo_check
+
+![CHECK administrador_sueldo_check](Comprobacion-check/administrador_sueldo_check.png)
+
+Se lleva a cabo una inserción en la tabla ADMINISTRADOR cuyo sueldo es 1000 y dado que es menor que el sueldo mínimo pues no se realiza.
+
+### Check cliente_suscripcion_check
+
+![CHECK cliente_suscripcion_check](Comprobacion-check/cliente_suscripcion_check.png)
+
+Se lleva a cabo una inserción en la tabla CLIENTE se comprueba que solo se aceptan dos tipos de suscripciones 'Mensual' o 'Anual', si se introduce una suscripción distinta, notifica de un error.
+
+### Check cliente_valora_capitulo_puntuacion_check
+
+![CHECK cliente_valora_capitulo_puntuacion_check](Comprobacion-check/cliente_valora_capitulo_puntuacion_check.png)
+
+Se lleva a cabo una inserción en la tabla CLIENTE_VALORA_CAPITULO permite que solo se acepten valoraciones entre 1 y 10, por lo tanto si se introduce un número valor a ello o menor, notifica de un error.
+
+
