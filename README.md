@@ -1,5 +1,5 @@
 # PROYECTO FINAL DE LA ASIGNATURA
-## En este proyecto se ha desarrollado una base de datos sobre una plataforma de valoraciones de series y se ha decidido llevar a cabo su implementación mediante PostgreSQL como Servicio Gestor de la Base de Datos
+- En este proyecto se ha desarrollado una base de datos sobre una plataforma de valoraciones de series y se ha decidido llevar a cabo su implementación mediante PostgreSQL como Servicio Gestor de la Base de Datos
 
 ## Descripción de la GENERACIÓN DE CÓDIGO DE COMPONENTES Y PROCEDIMIENTOS
 
