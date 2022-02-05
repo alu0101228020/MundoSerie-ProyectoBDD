@@ -109,5 +109,3 @@ Se lleva a cabo una inserción en la tabla CLIENTE se comprueba que solo se acep
 ![CHECK cliente_valora_capitulo_puntuacion_check](Comprobacion-check/cliente_valora_capitulo_puntuacion_check.png)
 
 Se lleva a cabo una inserción en la tabla CLIENTE_VALORA_CAPITULO permite que solo se acepten valoraciones entre 1 y 10, por lo tanto si se introduce un número valor a ello o menor, notifica de un error.
-
-
