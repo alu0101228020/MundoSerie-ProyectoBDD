@@ -1,9 +1,10 @@
 # PROYECTO FINAL DE LA ASIGNATURA
-- En este proyecto se ha desarrollado una base de datos sobre una plataforma de valoraciones de series y se ha decidido llevar a cabo su implementación mediante PostgreSQL como Servicio Gestor de la Base de Datos
+
+- En este proyecto se ha desarrollado una base de datos sobre una plataforma de valoraciones de series y se ha decidido llevar a cabo su implementación mediante PostgreSQL como Servicio Gestor de la Base de Datos.
 
 ## Descripción de la GENERACIÓN DE CÓDIGO DE COMPONENTES Y PROCEDIMIENTOS
 
-En primer lugar, se lleva a cabo la creación de la tabla SERIE que contiene como clave primaria el titulo.
+En primer lugar, se lleva a cabo la creación de la tabla SERIE que contiene como clave primaria el título.
 
 ```sql
 -- -----------------------------------------------------
@@ -52,7 +53,7 @@ CREATE TABLE IF NOT EXISTS TEMPORADA (
     ON UPDATE CASCADE);
 ```
 
-Luego, se lleva a cabo la creación de la tabla CAPITULO que contiene como clave primaria el número del capítulo, el título de la serie y el número de temporada. Además, en esta tabla se tiene en cuenta que poder defecto el campo valoracion se iniciará a 0 dado que a través de un disparador, se actualizará para realizar la media de valoraciones que existen en un mismo capítulo.
+Luego, se lleva a cabo la creación de la tabla CAPITULO que contiene como clave primaria el número del capítulo, el título de la serie y el número de temporada. Además, en esta tabla se tiene en cuenta como atributo el campo por defecto de valoracion que inicialmente se muestra a 0 dado que a través de un disparador, se actualizará para realizar la media de valoraciones que existen en un mismo capítulo.
 
 ```sql
 -- -----------------------------------------------------
@@ -174,7 +175,7 @@ CREATE TABLE IF NOT EXISTS ADMINISTRADOR (
     ON UPDATE CASCADE);
 ```
 
-Además, creamos la tabla CLIENTE donde se representa un CHECK que establece que la suscripción del cliente debe ser 'Mensual' o 'Anual'. Además, contiene como clave primaria el email que está relacionado con la tabla USUARIO.
+Además, creamos la tabla CLIENTE donde se representa un CHECK que establece que la suscripción del cliente debe ser 'Mensual' o 'Anual'. También, contiene como clave primaria el email que está relacionado con la tabla USUARIO.
 
 ```sql
 -- -----------------------------------------------------
@@ -192,7 +193,7 @@ CREATE TABLE IF NOT EXISTS CLIENTE (
     ON UPDATE CASCADE);
 ```
 
-Finalmente, se crea la tabla CLIENTE_COMENTA_SERIE que tiene como clave primaria el email del cliente y el título de la serie ya que el cliente comenta una serie.
+Finalmente, se crea la tabla CLIENTE_COMENTA_SERIE que tiene como clave primaria el email del cliente y el título de la serie ya que un cliente puede comentar una serie.
 
 ```sql
 -- -----------------------------------------------------
@@ -217,7 +218,7 @@ CREATE TABLE IF NOT EXISTS CLIENTE_COMENTA_SERIE (
     ON UPDATE CASCADE);
 ```
 
-En el caso de los disparadores, creamos los siguientes:
+En el caso de los **disparadores**, creamos los siguientes:
 
 ```sql
 /* Create function 'verificar_email' */
