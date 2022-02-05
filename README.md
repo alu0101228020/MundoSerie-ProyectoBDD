@@ -20,6 +20,19 @@ En este proyecto se ha desarrollado una base de datos sobre una plataforma de va
   * [Carga de datos]()
   * [Proceso de carga de datos y pruebas realizadas]()
 
+## Instrucciones de uso
+Se dispone de 3 scripts diferentes en nuestro proyecto, los cuales son:
+
+* **mundoSerie.sql:** mediante la ejecución de este scripts, se realiza la creación de las tablas con todos sus atributos. A su vez, se lleva a cabo una serie de **checks**
+* **triggers.sql:** en este fichero se definen todos los disparadores de los que se dispondrán en la base de datos. Al ejecutar este script, dichos disparadores se crean automáticamente.
+* **insert.sql:** este fichero contiene una serie inserciones a las distintas tablas de la base de datos. Al ejecutar este script, dichas inserciones se realizan automáticamente.
+
+A la hora de emplear estos scripts, debemos de seguir un orden, el cual es:
+
+1. **mundoSerie.sql**
+2. **triggers.sql**
+3. **insert.sql**
+
 ## Descripción de la GENERACIÓN DE CÓDIGO DE COMPONENTES Y PROCEDIMIENTOS
 
 En primer lugar, se lleva a cabo la creación de la tabla SERIE que contiene como clave primaria el título.
