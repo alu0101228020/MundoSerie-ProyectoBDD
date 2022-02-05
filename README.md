@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS SERIE (
   fecha_estreno DATE NULL,
   idioma VARCHAR(15) NOT NULL,
   sinopsis VARCHAR(400) NULL,
-  valoracion INT NULL,
   PRIMARY KEY (titulo));
 ```
 
