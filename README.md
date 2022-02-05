@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS CAPITULO (
     ON UPDATE CASCADE);
 ```
 
-Luego, se lleva a cabo la creación de la tabla CAPITULO que contiene como clave primaria el número del capítulo, el título de la serie y el número de temporada.
+Luego, se lleva a cabo la creación de la tabla CAPITULO que contiene como clave primaria el número del capítulo, el título de la serie y el número de temporada. Además, en esta tabla se tiene en cuenta que poder defecto el campo valoracion se iniciará a 0 dado que a través de un disparador, se actualizará para realizar la media de valoraciones que existen en un mismo capítulo.
 
 ```sql
 -- -----------------------------------------------------
