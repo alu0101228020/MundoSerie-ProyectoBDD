@@ -1,6 +1,23 @@
-# PROYECTO FINAL DE LA ASIGNATURA
+# PROYECTO FINAL DE LA ASIGNATURA ADMINISTRACIÓN Y DISEÑO DE BASE DE DATOS
 
 - En este proyecto se ha desarrollado una base de datos sobre una plataforma de valoraciones de series y se ha decidido llevar a cabo su implementación mediante PostgreSQL como Servicio Gestor de la Base de Datos.
+
+## Componentes del equipo:
+
+ *  **Daniel Álvarez Medina - [ alu0101216126@ull.edu.es ](alu0101216126@ull.edu.es)**
+ *  **Alberto Mendoza Rodríguez - [ alu0101217741@ull.edu.es ](alu0101217741@ull.edu.es)**
+ *  **Dayana Armas Alonso - [ alu0101228020@ull.edu.es ](alu0101228020@ull.edu.es)**
+ *  **Jorge Hernández Batista - [ alu0101214627@ull.edu.es ](alu0101214627@ull.edu.es)**
+ *  **Acoidán Mesa Hernández - [ alu0101206479@ull.edu.es ](alu0101206479@ull.edu.es)**
+
+# Índice de documentos
+
+  * [Requisitos]()
+  * [Modelo Conceptual (ER/E)]()
+  * [Modelo Lógico Relacional]()
+  * [Modelo Lógico Objeto-Relacional (UML)]()
+  * [Generación de Código (Scripts)]()
+  * [Carga de datos]()
 
 ## Descripción de la GENERACIÓN DE CÓDIGO DE COMPONENTES Y PROCEDIMIENTOS
 
